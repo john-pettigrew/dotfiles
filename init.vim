@@ -71,3 +71,5 @@ set ts=2
 
 :noremap <leader>t :tabe<cr>
 :noremap <leader>a :terminal<cr>
+
+colorscheme evening
