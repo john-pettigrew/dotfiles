@@ -42,6 +42,8 @@ call plug#end()
 
 set sw=2
 set ts=2
+set foldmethod=indent
+set foldlevelstart=99
 
 
 :tnoremap <Esc> <C-\><C-n>
