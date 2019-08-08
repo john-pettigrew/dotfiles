@@ -1,4 +1,4 @@
-:let mapleader = "\<Space>"
+let mapleader = "\<Space>"
 
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -8,7 +8,7 @@ Plug 'vim-airline/vim-airline'
 " NERDTree
 Plug 'scrooloose/nerdtree'
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -27,18 +27,22 @@ else
 endif
 let g:deoplete#enable_at_startup = 1
 
-" Themes
-Plug 'flazz/vim-colorschemes'
-
 " Eslint
 Plug 'w0rp/ale'
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
- 
 
-call plug#end()
+" Git
+Plug 'tpope/vim-fugitive'
+
+" Goyo
+Plug 'junegunn/goyo.vim'
+let g:goyo_width = 120
+:noremap <leader>g :Goyo<cr>
+autocmd! User GoyoLeave nested hi Normal guibg=NONE ctermbg=NONE
+
 
 set sw=2
 set ts=2
@@ -74,4 +78,26 @@ set foldlevelstart=99
 :noremap <leader>t :tabe<cr>
 :noremap <leader>a :terminal<cr>
 
-colorscheme evening
+" Gruvbox
+Plug 'morhetz/gruvbox'
+let g:gruvbox_contrast_dark = 'soft'
+
+" EasyMotion
+Plug 'easymotion/vim-easymotion'
+
+" Startify
+Plug 'mhinz/vim-startify'
+
+" Dracula
+Plug 'dracula/vim'
+
+call plug#end()
+
+" Tabs
+set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
+
+"colorscheme gruvbox
+colorscheme dracula
+set termguicolors
+syntax on
+hi Normal guibg=NONE ctermbg=NONE
