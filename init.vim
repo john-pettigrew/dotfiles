@@ -91,6 +91,9 @@ Plug 'mhinz/vim-startify'
 " Dracula
 Plug 'dracula/vim'
 
+" Godot
+Plug 'calviken/vim-gdscript3'
+
 call plug#end()
 
 " Tabs
