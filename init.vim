@@ -78,6 +78,8 @@ set foldlevelstart=99
 :noremap <leader>t :tabe<cr>
 :noremap <leader>a :terminal<cr>
 
+:vnoremap p "_dP
+
 " Gruvbox
 Plug 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark = 'soft'
@@ -113,4 +115,5 @@ set autoindent
 colorscheme dracula
 set termguicolors
 syntax on
+
 hi Normal guibg=NONE ctermbg=NONE
