@@ -94,10 +94,20 @@ Plug 'dracula/vim'
 " Godot
 Plug 'calviken/vim-gdscript3'
 
+" Omnisharp
+Plug 'OmniSharp/Omnisharp-vim'
+let g:syntastic_cs_checkers = ['code_checker']
+let g:OmniSharp_server_stdio = 1
+
 call plug#end()
 
 " Tabs
-set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
+set tabstop=4 
+set softtabstop=0
+set noexpandtab 
+set shiftwidth=4
+set smarttab
+set autoindent
 
 "colorscheme gruvbox
 colorscheme dracula
